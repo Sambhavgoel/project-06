@@ -1,0 +1,73 @@
+body{
+    background: url("space.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment :fixed;
+}
+.heading{
+    display: flex;
+    flex-direction: column;
+    color:white;
+    align-items: center;
+}
+.part h1{
+    color:aqua;
+    display: flex;
+    
+}
+.part li{
+    color:chartreuse;    
+    font-size: 25px;
+    font-weight: 400px;
+    font-size:larger;
+    justify-content: space-evenly;
+    padding-bottom: 20px;
+    
+}
+.part{
+    display: flex;
+    justify-content: space-evenly;
+}
+.second{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+button{
+    font-weight: 500px;
+    border-radius: 20px;
+    width: 100px;
+    height:30px;
+    align-items: center;
+    font-size: medium;
+    color: black;
+    background-color:grey;
+    
+}
+button:hover{
+    background-color: green;
+    box-shadow: 1px 1px 5px green ;
+    color: white;
+    transform: scale(1.1);
+
+}
+p{
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+    color: black;
+    font-weight:300px;
+    background: yellow;
+}
+@media (max-width:600px)
+{
+    .heading{
+        display: flex;
+        justify-content: center;
+    }
+    .part{
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+}

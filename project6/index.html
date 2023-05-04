@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game</title>
+    <link rel="stylesheet" href="style.css">
+   </head>
+<body>
+    <div class="heading">
+        <h1>WELCOME TO THE GAME</h1>
+        <h1>GUESSING THE NUMBER</h1>
+    </div>
+    <div class="part">
+        <div class="first">
+            <ul>
+                <h1>INSTRUCTIONS</h1>
+                <li>The user will enter a number between 1 and 100. If user enters a invalid number, show a error.</li>
+                <li>The computer will have 5 chances to guess the number.</li>
+                <li>If the computer correctly guesses the number within 5 attempts, it wins</li>
+                <li>If the computer is unable to guess the number, the user wins.</li>
+            </ul>
+        </div>
+        <div class="second">
+            <h1>START GAME </h1>
+            <button onclick="game()">CLICK</button>
+            <p id="enter"></p>
+            <p id="guess"></p>
+            <p id="result">
+
+        </div>
+    </div>
+    <script>
+        function game(){
+            
+            document.getElementById("guess").innerHTML="";
+            let a=prompt("enter a number")
+            let b=Number(a);
+            //console.log(b);
+            document.getElementById("enter").innerHTML="The Number You Entered is "+b;
+            let check=0;
+            if((b>100)||(b<1))
+            {   
+                console.log("this is not a valid input");
+                alert("this is not a valid input");
+                game();
+                return;
+            }
+
+            for(let i=0;i<5;i++)
+            {
+                let a=Math.random()*100;
+                let gussed_num=Math.ceil(a);
+                //console.log(gussed_num);
+                document.getElementById("guess").innerHTML+="The guessed number is "+gussed_num+"<br/>";
+                if(gussed_num==b)
+                {
+                    check=1;
+                    
+                    //console.log("computer Win");
+                    document.getElementById("result").innerHTML="computer win";
+                    break;
+                }
+            }
+            if(check==0)
+                {
+                    //console.log("You win");
+                    document.getElementById("result").innerHTML="You Win";
+
+                }
+        }
+
+
+        
+    </script>
+</body>
+</html>
